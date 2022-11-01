@@ -46,10 +46,7 @@
             <a href="https://ekoopmans.github.io/html2pdf.js/">https://ekoopmans.github.io/html2pdf.js/</a>
             <img src="./312680651_429482309343553_558566165589641849_n.jpg" style="width: 12cm">
         </div>
-        <button onclick="printbyID({
-            id: 'element-to-print',
-            name: 'namapdf',
-        })"> Print the div</button>
+        <button onclick="printbyID('element-to-print','namapdf')"> Print the div</button>
     </div>
 </body>
 

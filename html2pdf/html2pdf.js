@@ -1,16 +1,9 @@
-function printbyID(param) {
-
-    // {
-    //     id,
-    //     name,
-    //     save,
-    // }
-
-    var element = document.getElementById(param.id);
+function printbyID(id, name) {
+    var element = document.getElementById(id);
     var opt = {
         enableLinks: true,
         margin: 0,
-        filename: param.name + '.pdf',
+        filename: name + '.pdf',
         image: {
             type: 'jpeg',
             quality: 0.98
