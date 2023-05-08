@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <script>
+        async function fetchJsonData(number) {
+            var formData = new FormData();
+            formData.append('data', number);
+            const data = await fetch("/SandBox/fetchJsonfromPhp/getJson.php", {
+                method: 'POST',
+                body: formData
+            }).then((res) => res.json())
+
+            document.getElementById("tbody").replaceChildren()
+            data.forEach(datum => {
+                prependRow(datum.no, datum.receivedData)
+            });
+        }
+
+        function prependRow(no, receivedData) {
+            let row = document.createElement("tr")
+            let cell_1 = document.createElement("td")
+            cell_1.append(no)
+            let cell_2 = document.createElement("td")
+            cell_2.append(receivedData)
+            row.append(cell_1, cell_2)
+            document.getElementById("tbody").append(row)
+        }
+    </script>
+    <style>
+        #panel {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            width: 100px;
+        }
+
+        #table {
+            width: 450px;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <main>
+        <h1>Fetch Json data from php</h1>
+        <p>Click the buttons below to send post request (with the string number in the body) and receive it back</p>
+        <div id="panel">
+            <button onclick='fetchJsonData("1016")'>1016</button>
+            <button onclick='fetchJsonData("1017")'>1017</button>
+        </div>
+        <div id="table">
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Received Data</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+        <pre>
+<code>
+header('Access-Control-Allow-Origin: *');// I forgot what this line is for, will research in the future
+header("Content-Type: application/json; charset=UTF-8"); // to return json format
+
+if (isset($_POST["data"])) {
+    // fetch any data here (from database/file system/ any other api endpoint)
+
+    // for example
+    $arr = array();
+
+    //generate array data
+    for ($i = 0; $i < 4; $i++) {
+        array_push($arr, array(
+            "no" => $i,
+            "receivedData" => $_POST["data"]
+            ));
+        };
+
+    echo json_encode($arr);//response with the array in json format
+    // end of example
+    return;
+}
+</code>
+</pre>
+    </main>
+</body>
+
+</html>
