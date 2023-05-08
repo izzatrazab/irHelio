@@ -16,7 +16,12 @@
                 body: formData
             }).then((res) => res.json())
 
+
+            document.getElementById("table").style.display = "block"
+            document.getElementById("json").style.display = "flex"
+            document.getElementById("codejson").textContent = JSON.stringify(data, undefined, 2)
             document.getElementById("tbody").replaceChildren()
+
             data.forEach(datum => {
                 prependRow(datum.no, datum.receivedData)
             });
@@ -33,6 +38,24 @@
         }
     </script>
     <style>
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #content>section {
+            flex: 1;
+            margin: 0;
+        }
+
+        #json {
+            /* display: flex; */
+            align-items: center;
+            max-width: 343px;
+            min-width: 343px;
+            display: none;
+        }
+
         #panel {
             display: flex;
             gap: 10px;
@@ -43,7 +66,11 @@
         }
 
         #table {
-            width: 450px;
+            max-width: 450px;
+            display: none;
+        }
+
+        pre {
         }
     </style>
 </head>
@@ -52,25 +79,36 @@
     <main>
         <h1>Fetch Json data from php</h1>
         <p>Click the buttons below to send post request (with the string number in the body) and receive it back</p>
-        <div id="panel">
-            <button onclick='fetchJsonData("1016")'>1016</button>
-            <button onclick='fetchJsonData("1017")'>1017</button>
-        </div>
-        <div id="table">
-            <table role="grid">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Received Data</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
+        <div id="content">
+            <section>
+                <div id="panel">
+                    <button onclick='fetchJsonData("1016")'>1016</button>
+                    <button onclick='fetchJsonData("1017")'>1017</button>
+                </div>
+                <div id="table">
+                    <table role="grid">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Received Data</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
 
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <pre id="json">
+                    <code id="codejson"></code>
+                </pre>
+            </section>
+            </pre>
         </div>
         <pre>
 <code>
+&lt;?php
 header('Access-Control-Allow-Origin: *');// I forgot what this line is for, will research in the future
 header("Content-Type: application/json; charset=UTF-8"); // to return json format
 
