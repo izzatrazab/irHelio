@@ -11,7 +11,7 @@
         async function fetchJsonData(number) {
             var formData = new FormData();
             formData.append('data', number);
-            const data = await fetch("/SandBox/fetchJsonfromPhp/getJson.php", {
+            const data = await fetch("./getJson.php", {
                 method: 'POST',
                 body: formData
             }).then((res) => res.json())
