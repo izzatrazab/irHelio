@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataTable</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <style>
+        select option {
+            background-color: var(--background-color);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <table role="grid" id="table">
+            <thead>
+                <tr>
+                    <th>TIME</th>
+                    <th>WATER LEVEL</th>
+                    <th>STAGE</th>
+                </tr>
+            </thead>
+            <!-- <tbody id="tbody"> -->
+            <!-- </tbody> -->
+        </table>
+    </main>
+    <script>
+        $(document).ready(function () {
+        fetchJsonData()
+        });
+        // let table = $('#table').DataTable();
+
+        // let date = moment().format('YYYY / MM / DD, HH:mm:ss');
+        // setInterval(function () {
+        //     //your code to be executed after 1 second
+        //     // console.log("d");
+        //     table.row.add([date, "test", "safe"]).draw(false)
+        // }, 1000);
+
+        async function fetchJsonData() {
+            const data = await fetch("./data.php", {
+                method: 'GET',
+            }).then((res) => res.json())
+
+            let table = $('#table').DataTable();
+            // console.log(data);
+            data.forEach(datum => {
+                let date = moment().format('YYYY / MM / DD, HH:mm:ss');
+                setTimeout(function () {
+                    //your code to be executed after 1 second
+                    console.log("d");
+                    table.row.add([date, datum.col2, datum.col3]).draw(false)
+                }, 1000);
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>
