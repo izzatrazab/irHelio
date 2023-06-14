@@ -7,7 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch Json from PHP file</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="./../highlight/styles/ir-black.min.css">
+    <script src="./../highlight/highlight.min.js"></script>
     <script>
+        window.onload = () => {
+            hljs.highlightAll()
+        }
         async function fetchJsonData(number) {
             var formData = new FormData();
             formData.append('data', number);
@@ -83,7 +88,7 @@
             <section>
                 <p> The body inside the post request contains an object with a key, "data" and a value (string number)
                 </p>
-                <pre><code>var formData = new FormData();
+                <pre><code >var formData = new FormData();
 formData.append('data', number);
 const data = await fetch("./getJson.php", {
     method: 'POST',
@@ -128,12 +133,17 @@ const data = await fetch("./getJson.php", {
                 <pre><code id="codejson"></code></pre>
             </section>
         </div>
-        <p>Below is the php codes (getJson.php file) that receive the post request made (after clicking the buttons). If
-            the post request succeed, the file will have a post data with the key, "data".</p>
-        <p>A dummy array data is generated in the for loop and its' format is converted to json using json_encode()
-            function. The echo statement will print the response which will be received by the requestor.</p>
+        <p>
+            Below is the php codes (getJson.php file) that receive the post request made (after clicking the buttons).
+            If the post request succeed, the file will have a post data with the key, "data".
+        </p>
+        <p>
+            A dummy array data is generated in the for loop and its' format is converted to json using json_encode()
+            function. The echo statement will print the response which will be received by the requestor.
+        </p>
         <pre><code>&lt;?php
-header('Access-Control-Allow-Origin: *');// I forgot what this line is for, will research in the future
+header('Access-Control-Allow-Origin: *');// I forgot what this line is for, will
+// research in the future
 header("Content-Type: application/json; charset=UTF-8"); // to return json format
 
 if (isset($_POST["data"])) {
