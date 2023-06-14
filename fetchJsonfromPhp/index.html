@@ -142,8 +142,7 @@ const data = await fetch("./getJson.php", {
             function. The echo statement will print the response which will be received by the requestor.
         </p>
         <pre><code>&lt;?php
-header('Access-Control-Allow-Origin: *');// I forgot what this line is for, will
-// research in the future
+header('Access-Control-Allow-Origin: *');// I forgot what this line is for, will research in the future
 header("Content-Type: application/json; charset=UTF-8"); // to return json format
 
 if (isset($_POST["data"])) {
