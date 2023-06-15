@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="./../highlight/styles/ir-black.min.css">
     <script src="./../highlight/highlight.min.js"></script>
     <script>
+        let clicked = false
         window.onload = () => {
             hljs.highlightAll()
         }
         async function fetchJsonData(number) {
+            console.log(number);
+
             var formData = new FormData();
             formData.append('data', number);
             const data = await fetch("./getJson.php", {
@@ -22,15 +25,19 @@
                 body: formData
             }).then((res) => res.json())
 
-            document.getElementById("table").style.display = "block"
-            document.getElementById("json").style.display = "block"
             document.getElementById("codejson").textContent = JSON.stringify(data, null, "\t")
-            hljs.highlightElement(document.getElementById("prejson"))
             document.getElementById("tbody").replaceChildren()
+            hljs.highlightElement(document.getElementById("codejson"))
 
             data.forEach(datum => {
                 prependRow(datum.no, datum.receivedData)
             });
+
+            if (!clicked) {
+                document.getElementById("table").style.display = "block"
+                document.getElementById("json").style.display = "block"
+                clicked = true
+            }
         }
 
         function prependRow(no, receivedData) {
@@ -132,7 +139,7 @@ const data = await fetch("./getJson.php", {
                 </div>
             </section>
             <section id="json">
-                <pre id='prejson'><code id="codejson"></code></pre>
+                <pre><code id="codejson" class='language-json'></code></pre>
             </section>
         </div>
         <p>
