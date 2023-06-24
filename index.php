@@ -9,10 +9,12 @@
     <title>irHelio</title>
 </head>
 
-<body class="container">
-    <main>
-        <h1>irHelio</h1>
-        <p>irHelio is a website that is dedicated as a collection of my solutions of the problems that I have encountered. All of the problems are focusing on HTML, Vanilla JS, and PHP</p>
+<body>
+    <main class="container">
+        <hgroup>
+            <h1>irHelio</h1>
+            <p>irHelio is a website that is dedicated as a collection of my solutions of the problems that I have encountered. All of the problems are focusing on HTML, Vanilla JS, and PHP</p>
+        </hgroup>
         <p>Here are some problems that I already solved (at least it solves my problem). There will be a lot more in the future.</p>
         <ol>
             <li>
@@ -22,6 +24,13 @@
                 <a href="fetchJsonfromPhp/">Fetch Json formatted data from PHP file</a>
             </li>
         </ol>
+        <footer>
+            <?php
+            date_default_timezone_set('Asia/Kuala_Lumpur');
+            echo 'Asia/Kuala_Lumpur: ';
+            echo date('Y/m/d g:ia');
+            ?>
+        </footer>
     </main>
 </body>
 
