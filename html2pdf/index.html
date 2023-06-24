@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html2pdf demo</title>
+    <link rel="stylesheet" href="./../lib/pico.css">
+    <script src="./html2pdf.bundle.min.js"></script>
+    <script>
+        window.onload = () => {
+            const style = document.getElementById('article1Style').innerText
+            document.getElementById('editorArticle1Style').value = style
+            console.log(style);
+        }
+
+        function printbyID(id, name) {
+            var element = document.getElementById(id);
+            var opt = {
+                enableLinks: true,
+                margin: 0,
+                filename: name + '.pdf',
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+                // jgn kacau scrollX, scrollY
+                html2canvas: {
+                    scale: 2,
+                    scrollX: 0,
+                    scrollY: 0,
+                },
+                jsPDF: {
+                    unit: 'cm',
+                    format: 'a4',
+                    orientation: 'landscape'
+                }
+            };
+            //nok save
+            // html2pdf().set(opt).from(element).save();
+
+            //output saja
+            html2pdf().set(opt).from(element).output('dataurlnewwindow')
+        }
+
+        function updateStylebyId(id, editorId) {
+            const editor = document.getElementById(editorId).value
+            document.getElementById(id).innerText = editor
+            console.log(editor);
+        }
+    </script>
+    <style>
+        main {
+            overflow: visible;
+        }
+    </style>
+    <style id="article1Style">
+        #article1 {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<!-- #article1 {
+    aspect-ratio:29.7/21;
+    width: 29.7 cm;
+    margin:0;
+                        background-color: red;
+                    }
+                 -->
+
+<body>
+    <main class='container'>
+        <header>
+            <hgroup>
+                <h1>html2pdf.fs Package Demo</h1>
+                <p>
+                    <a href="https://ekoopmans.github.io/html2pdf.js/">Click here</a> to read html2pdf documentation.
+                    Credit
+                    to Erik Koopmans for creating this amazing package.
+                </p>
+            </hgroup>
+        </header>
+        <section>
+            <hgroup>
+                <h2>Demo</h2>
+                <p>We will try to change the article element below to pdf.</p>
+            </hgroup>
+            <article id="article1">
+                <p>This is a grasshopper</p>
+                <img src="./eka-p-amdela-55JuNAPgYfo-unsplash.jpg" alt="">
+            </article>
+            <p>
+                Take note that the styles of the element need to be considered. Edit the CSS below to change the above
+                article element style.
+            </p>
+            <textarea name="styleEditor" id='editorArticle1Style' cols="30" rows="10"
+                oninput='updateStylebyId("article1Style","editorArticle1Style")'>
+            </textarea>
+            <div>
+                <button onclick='printbyID("article1", "a picture of green grasshopper")'>print</button>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
