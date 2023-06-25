@@ -7,84 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch Json from PHP file</title>
     <link rel="stylesheet" href="./../lib/pico.css">
+    <link rel="stylesheet" href="./fetchJsonfomPhp.css">
+
+    <!-- highlight.js implementation -->
     <link rel="stylesheet" href="./../lib/highlight/styles/ir-black.min.css">
-    <script src="./../highlight/highlight.min.js"></script>
-    <script>
-        let clicked = false
-        window.onload = () => {
-            hljs.highlightAll()
-        }
+    <script src="./../lib/highlight/highlight.min.js"></script>
+    <script src="./fetchJsonfromPhp.js"></script>
 
-        async function fetchJsonData(number) {
-            console.log(number);
-
-            var formData = new FormData();
-            formData.append('data', number);
-            const data = await fetch("./getJson.php", {
-                method: 'POST',
-                body: formData
-            }).then((res) => res.json())
-
-            document.getElementById("codejson").textContent = JSON.stringify(data, null, "\t")
-            document.getElementById("tbody").replaceChildren()
-            hljs.highlightElement(document.getElementById("codejson"))
-
-            data.forEach(datum => {
-                prependRow(datum.no, datum.receivedData)
-            });
-
-            if (!clicked) {
-                document.getElementById("table").style.display = "block"
-                document.getElementById("json").style.display = "block"
-                clicked = true
-            }
-        }
-
-        function prependRow(no, receivedData) {
-            let row = document.createElement("tr")
-            let cell_1 = document.createElement("td")
-            cell_1.append(no)
-            let cell_2 = document.createElement("td")
-            cell_2.append(receivedData)
-            row.append(cell_1, cell_2)
-            document.getElementById("tbody").append(row)
-        }
-    </script>
-    <style>
-        #content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        #content>section {
-            flex: 1;
-            margin: 0;
-        }
-
-        #json {
-            display: none;
-        }
-
-        #panel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        #table {
-            display: none;
-        }
-
-        button {
-            width: 100px;
-        }
-    </style>
 </head>
 
 <body class="container">
@@ -117,7 +46,6 @@ const data = await fetch("./getJson.php", {
             </section>
         </div>
         <div id="content">
-
             <section id="panel">
                 <p> Click the
                     buttons below to send post request.</p>
