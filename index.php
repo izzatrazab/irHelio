@@ -17,9 +17,9 @@
         </hgroup>
         <p>Here are some problems that I already solved (at least it solves my problem). There will be a lot more in the future.</p>
         <ol>
-            <li>
+            <!-- <li>
                 <a href="html2pdf/">HTML2PDF demo (php to pdf)</a>
-            </li>
+            </li> -->
             <li>
                 <a href="fetchJsonfromPhp/">Fetch Json formatted data from PHP file</a>
             </li>
