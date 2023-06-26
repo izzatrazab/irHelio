@@ -24,9 +24,10 @@
                 target="_blank">Github repo</a>.</p>
         <div id="content">
             <section>
-                <p> The body inside the post request contains an object with a key, "data" and a value (string number)
+                <p>
+                    The body inside the post request contains an object with a key, "data" and a value (string number)
                 </p>
-                <pre><code >var formData = new FormData();
+                <pre><code>var formData = new FormData();
 formData.append('data', number);
 const data = await fetch("./getJson.php", {
     method: 'POST',
