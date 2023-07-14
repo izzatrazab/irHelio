@@ -16,12 +16,11 @@
             hljs.highlightAll()
         }
 
-
         function printbyID(id, name) {
             var element = document.getElementById(id);
             var opt = {
                 enableLinks: true,
-                margin: 0,
+                margin: 1,
                 filename: name + '.pdf',
                 image: {
                     type: 'jpeg',
@@ -37,6 +36,7 @@
                     unit: 'cm',
                     format: 'a4',
                     orientation: 'portrait'
+                    // orientation: 'landscape'
                 }
             };
             //nok save
@@ -50,22 +50,11 @@
         main {
             overflow: visible;
         }
-
-        figcaption {
-            text-align: center;
-        }
-
-        article {
-            margin: 0;
-        }
-
-        ol>li {
-            font-size: 1.5rem;
-        }
-        code{
+        code {
             width: auto;
         }
     </style>
+    
 </head>
 
 <body>
@@ -98,11 +87,14 @@
             <hgroup>
                 <h2>Setup</h2>
                 <p>I used raw javascript file,
-                    <mark>html2pdf.bundle.min.js</mark>. Download it
+                    <mark>html2pdf.bundle.min.js</mark>. Download it here:
                     <a href="https://github.com/eKoopmans/html2pdf.js/blob/master/dist/html2pdf.bundle.min.js"
-                        target='_blank'>here</a>.
+                        target='_blank'>https://github.com/eKoopmans/html2pdf.js/blob/master/dist/html2pdf.bundle.min.js</a>.
                 </p>
             </hgroup>
+            <p>
+                Include the script file in the head element as below:
+            </p>
             <pre><code class='language-html'>&lt;script src="html2pdf.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
 
         </section>
@@ -111,28 +103,38 @@
                 <h2>Demo</h2>
                 <p>We will try to change the article element below to pdf.</p>
             </hgroup>
+            <hr>
             <article id="article1">
                 <figure>
                     <img src="./eka-p-amdela-55JuNAPgYfo-unsplash.jpg" alt="">
                     <figcaption>A grasshopper</figcaption>
                 </figure>
             </article>
+            <hr>
             <button onclick='printbyID("article1", "a picture of green grasshopper")'>print</button>
         </section>
-        <section>
-            <hgroup>
-                <h2>Considerations</h2>
-                <p>This is to ensure the result is exactly what you want.</p>
-            </hgroup>
-            <ol>
-                <li>
-                    <h3>Margin</h3>
-                    <p>The margin of the choosen element will be printed as well. It is advisable to set margin in </p>
-                </li>
-            </ol>
-        </section>
-
     </main>
 </body>
 
 </html>
+<style>
+    figcaption {
+        text-align: center;
+    }
+
+    #article1 {
+        margin: 0;
+        width: 100%;
+        aspect-ratio: 210/297;
+
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+
+    #article1 > figure > img{
+        object-fit: cover;
+        width: 35mm;
+        height: 50mm;
+    }
+</style>
