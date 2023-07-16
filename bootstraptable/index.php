@@ -12,15 +12,15 @@ $results = [
         "slot_owner" => "1015"
     ],
     [
-        'bil' => 1,
-        'id_refer' => "AB2851212123",
+        'bil' => 2,
+        'id_refer' => "CD2851212123",
         "nama" => "Raja Tun Uda Al-Haj bin Raja Muhammad",
         "dr" => "Abdul Aziz Abdul Majid",
-        "title" => "Dr Abdul Aziz kurus badan",
+        "title" => "Dr Abdul Aziz habit rokok",
         "start" => "2023-07-04 11:00:55",
         "end" => "2023-07-04 05:00:07",
         "status" => "ACTIVE",
-        "slot_owner" => "1015"
+        "slot_owner" => "1016"
     ],
 
 ];
@@ -38,7 +38,8 @@ $results = [
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <!-- highlight js -->
-    <link rel="stylesheet" href="./../lib/highlight/styles/ir-black.min.css">
+    <!-- <link rel="stylesheet" href="./../lib/highlight/styles/ir-black.min.css"> -->
+    <link rel="stylesheet" href="./../lib/highlight/styles/vs2015.min.css">
     <script src="./../lib/highlight/highlight.min.js"></script>
     <script>
         window.onload = () => {
@@ -46,20 +47,23 @@ $results = [
         }
     </script>
     <style>
-        code{
-            padding-block: 0 !important;
+        #codes {
+            background-color: black;
+        }
+
+        code {
+            display: contents !important;
         }
     </style>
 </head>
 
-<body  class="container">
+<body class="container">
     <main class="d-flex flex-column">
         <a href="./..">HOME</a>
         <section>
             <h1>Below is the raw data used </h1>
-
-<pre>
-<?php print_r($results)?>
+            <pre>
+<?php print_r($results) ?>
 </pre>
         </section>
         <section>
@@ -96,9 +100,8 @@ $results = [
         </section>
         <section>
             <h1>The codes</h1>
-            <pre>
-<code class="language-html">
-&lt;table class="table table-striped"&gt;
+            <pre id="codes" class="p-3"><code class="language-html"><!--
+-->&lt;table class="table table-striped"&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th scope="col"&gt;ID&lt;/th&gt;
@@ -125,9 +128,9 @@ $results = [
         }
     ?&gt;</code><code class="language-html">
     &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;/table&gt;<!--
 
-</code>
+--></code>
 </pre>
         </section>
     </main>
