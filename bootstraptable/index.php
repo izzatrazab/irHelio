@@ -46,6 +46,7 @@ $results = [
 
 <body class="container">
     <main>
+        <a href="./..">HOME</a>
         <section>
             <h1>Below is the raw data used </h1>
 

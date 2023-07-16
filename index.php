@@ -23,6 +23,9 @@
             <li>
                 <a href="fetchJsonfromPhp/">Fetch Json formatted data from PHP file</a>
             </li>
+            <li>
+                <a href="bootstraptable/">Bootstrap table</a>
+            </li>
         </ol>
         <footer>
             <?php
