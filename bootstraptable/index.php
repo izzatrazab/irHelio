@@ -24,7 +24,6 @@ $results = [
     ],
 
 ];
-
 ?>
 
 <!doctype html>
@@ -38,7 +37,6 @@ $results = [
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <!-- highlight js -->
-    <!-- <link rel="stylesheet" href="./../lib/highlight/styles/ir-black.min.css"> -->
     <link rel="stylesheet" href="./../lib/highlight/styles/vs2015.min.css">
     <script src="./../lib/highlight/highlight.min.js"></script>
     <script>
@@ -62,12 +60,13 @@ $results = [
         <a href="./..">HOME</a>
         <section>
             <h1>Below is the raw data used </h1>
-            <pre>
+            <pre class="p-3">
 <?php print_r($results) ?>
 </pre>
         </section>
         <section>
             <h1>The raw data in table format</h1>
+            <div class="overflow-scroll">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -93,10 +92,10 @@ $results = [
                         }
                         echo '</tr>';
                     }
-
                     ?>
                 </tbody>
             </table>
+            </div>
         </section>
         <section>
             <h1>The codes</h1>
