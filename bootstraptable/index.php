@@ -2,10 +2,10 @@
 $results = [
     [
         'bil' => 1,
-        'id_refer' => "DT2854522023",
-        "nama" => "MOHD AZROY BIN YUSOF",
-        "dr" => "MOHD NASIR BIN YUSOF",
-        "title" => "Dr razif kurus badan",
+        'id_refer' => "AB2851212123",
+        "nama" => "Raja Tun Uda Al-Haj bin Raja Muhammad",
+        "dr" => "Abdul Aziz Abdul Majid",
+        "title" => "Dr Abdul Aziz kurus badan",
         "start" => "2023-07-04 11:00:55",
         "end" => "2023-07-04 05:00:07",
         "status" => "ACTIVE",
@@ -13,15 +13,15 @@ $results = [
     ],
     [
         'bil' => 1,
-        'id_refer' => "DT2854522023",
-        "nama" => "MOHD AZROY BIN YUSOF",
-        "dr" => "MOHD NASIR BIN YUSOF",
-        "title" => "Dr razif kurus badan",
+        'id_refer' => "AB2851212123",
+        "nama" => "Raja Tun Uda Al-Haj bin Raja Muhammad",
+        "dr" => "Abdul Aziz Abdul Majid",
+        "title" => "Dr Abdul Aziz kurus badan",
         "start" => "2023-07-04 11:00:55",
         "end" => "2023-07-04 05:00:07",
         "status" => "ACTIVE",
         "slot_owner" => "1015"
-    ]
+    ],
 
 ];
 
@@ -34,7 +34,10 @@ $results = [
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap table</title>
+    <!-- bootstrap css (bootstrap js is within body element) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- highlight js -->
     <link rel="stylesheet" href="./../lib/highlight/styles/ir-black.min.css">
     <script src="./../lib/highlight/highlight.min.js"></script>
     <script>
@@ -42,18 +45,22 @@ $results = [
             hljs.highlightAll()
         }
     </script>
+    <style>
+        code{
+            padding-block: 0 !important;
+        }
+    </style>
 </head>
 
-<body class="container">
-    <main>
+<body  class="container">
+    <main class="d-flex flex-column">
         <a href="./..">HOME</a>
         <section>
             <h1>Below is the raw data used </h1>
 
-            <pre>
-    <?= print_r($results) ?>
+<pre>
+<?php print_r($results)?>
 </pre>
-            </p>
         </section>
         <section>
             <h1>The raw data in table format</h1>
@@ -90,7 +97,7 @@ $results = [
         <section>
             <h1>The codes</h1>
             <pre>
-                <code >
+<code class="language-html">
 &lt;table class="table table-striped"&gt;
     &lt;thead&gt;
         &lt;tr&gt;
@@ -105,7 +112,7 @@ $results = [
             &lt;th scope="col"&gt;slot owner&lt;/th&gt;
         &lt;/tr&gt;
     &lt;/thead&gt;
-    &lt;tbody&gt;
+    &lt;tbody&gt;</code><code class="language-php">
     &lt;?php
         foreach ($results as $result) {
             echo '&lt;tr class="table-primary"&gt;';
@@ -116,11 +123,12 @@ $results = [
             }
             echo '&lt;/tr&gt;';
         }
-    ?&gt;
+    ?&gt;</code><code class="language-html">
     &lt;/tbody&gt;
 &lt;/table&gt;
-    </code>
-            </pre>
+
+</code>
+</pre>
         </section>
     </main>
 </body>
