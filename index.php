@@ -24,7 +24,10 @@
                 <a href="fetchJsonfromPhp/">Fetch Json formatted data from PHP file</a>
             </li>
             <li>
-                <a href="bootstraptable/">Bootstrap table</a>
+                <a href="bootstraptable/">Bootstrap table (directly in php file)</a>
+            </li>
+            <li>
+                <a href="create-table-using-javascript/">Create table using javascript</a>
             </li>
         </ol>
         <footer>

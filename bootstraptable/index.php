@@ -32,10 +32,10 @@ $results = [
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap table</title>
-    <!-- bootstrap css (bootstrap js is within body element) -->
+    <title>Bootstrap table (directly in php file)</title>
+    <!-- bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <!-- highlight js -->
     <link rel="stylesheet" href="./../lib/highlight/styles/vs2015.min.css">
     <script src="./../lib/highlight/highlight.min.js"></script>
@@ -67,34 +67,34 @@ $results = [
         <section>
             <h1>The raw data in table format</h1>
             <div class="overflow-scroll">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">ID refer</th>
-                        <th scope="col">nama</th>
-                        <th scope="col">Doctor</th>
-                        <th scope="col">title</th>
-                        <th scope="col">start</th>
-                        <th scope="col">end</th>
-                        <th scope="col">status</th>
-                        <th scope="col">slot owner</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($results as $result) {
-                        echo '<tr class="table-primary">';
-                        foreach ($result as $element) {
-                            echo '<td class="table-primary">';
-                            echo $element;
-                            echo '</td>';
+                <table class="table table-striped table-success">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">ID refer</th>
+                            <th scope="col">nama</th>
+                            <th scope="col">Doctor</th>
+                            <th scope="col">title</th>
+                            <th scope="col">start</th>
+                            <th scope="col">end</th>
+                            <th scope="col">status</th>
+                            <th scope="col">slot owner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($results as $result) {
+                            echo '<tr class="table-primary">';
+                            foreach ($result as $element) {
+                                echo '<td class="table-primary">';
+                                echo $element;
+                                echo '</td>';
+                            }
+                            echo '</tr>';
                         }
-                        echo '</tr>';
-                    }
-                    ?>
-                </tbody>
-            </table>
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </section>
         <section>
