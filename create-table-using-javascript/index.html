@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -34,6 +35,17 @@
 
         function createTable(list, tbodyID) {
             let tbody = document.getElementById(tbodyID)
+            if(list.length === 0){
+                let row = document.createElement("tr")
+                row.className = 'table-primary'
+                let td = document.createElement("td")
+                td.className = 'table-primary'
+                td.setAttribute('colspan', '9')//colspan value depends on how many columns you have
+                td.append('It seems that you do not have any appointment in this date.')
+                row.append(td)
+                tbody.append(row)
+                return
+            }
             list.forEach(items => {
                 let row = document.createElement("tr")
                 row.className = 'table-primary'
@@ -46,6 +58,10 @@
                 tbody.append(row)
             });
         }
+
+        function removeAllChild(id){
+            document.getElementById(id).replaceChildren();
+        }
     </script>
 </head>
 
@@ -56,11 +72,11 @@
     <section>
         <h2>Demo</h2>
         <p>
-            Click the button to add rows to the table:
-            <button class='btn btn-primary' onclick='fetchList()'>Click me</button>
+            Click this button to add rows to the table:
+            <button class='btn btn-primary' onclick='fetchList()'>Add rows</button>. Click this button to clear the table: <button class='btn btn-danger' onclick='removeAllChild("tbody")'>Clear Table</button>.
         </p>
         <div class="overflow-scroll">
-            <table id='table' class='table table-primary table-striped'>
+            <table id='table' class='table table-primary table-striped-columns'>
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -75,7 +91,6 @@
                     </tr>
                 </thead>
                 <tbody id='tbody'>
-
                 </tbody>
             </table>
         </div>
@@ -148,6 +163,19 @@ async function fetchList() {
 
 function createTable(list, tbodyID) {
     let tbody = document.getElementById(tbodyID)
+    
+    if(list.length === 0){
+        let row = document.createElement("tr")
+        row.className = 'table-primary'
+        let td = document.createElement("td")
+        td.className = 'table-primary'
+        td.setAttribute('colspan', '9')//colspan value depends on how many columns you have
+        td.append('It seems that you do not have any appointment in this date.')
+        row.append(td)
+        tbody.append(row)
+        return
+    }
+
     list.forEach(items => {
         let row = document.createElement("tr")
         row.className = 'table-primary'
