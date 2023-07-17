@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- bootstrap css  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-    <?php include_once './../lib/highlight-script.html';?>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <?php include_once './../lib/highlight-script.html'; ?>
 
     <title>Create table using javascript</title>
     <script>
@@ -28,12 +25,12 @@
 
         function createTable(list, tbodyID) {
             let tbody = document.getElementById(tbodyID)
-            if(list.length === 0){
+            if (list.length === 0) {
                 let row = document.createElement("tr")
                 row.className = 'table-primary'
                 let td = document.createElement("td")
                 td.className = 'table-primary'
-                td.setAttribute('colspan', '9')//colspan value depends on how many columns you have
+                td.setAttribute('colspan', '9') //colspan value depends on how many columns you have
                 td.append('It seems that you do not have any appointment in this date.')
                 row.append(td)
                 tbody.append(row)
@@ -52,7 +49,7 @@
             });
         }
 
-        function removeAllChild(id){
+        function removeAllChild(id) {
             document.getElementById(id).replaceChildren();
         }
     </script>
@@ -122,16 +119,16 @@
         <ul>
             <li>
                 <p>
-                    <mark>fetchList function</mark> below is simply fetching some data from another file. You can get
-                    the data anywhere you want as long its' format is an array of object that has all the element needed
+                    <mark>fetchList() function</mark> below is simply fetching some data from another file. You can get
+                    the data anywhere you want as long its' format is an <strong>array of object</strong> that has all the element needed
                     for each column of the table.
                 </p>
             </li>
             <li>
                 <p>
-                    <mark>createTable function</mark> is where the table is created. Simply call the function and pass
+                    <mark>createTable() function</mark> is where the table is created. Simply call the function and pass
                     an array of object as mention before as well as the id of tbody element that you use. In this case,
-                    this function is called in fetchList function at the end.
+                    this function is called in fetchList function at last line, the array is fetched from another file and the id is `tbody`.
                 </p>
                 <p>
                     Use the id that specified the tbody element that you use. If you use bootstrap/ tailwind or any

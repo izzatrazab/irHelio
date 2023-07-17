@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html2pdf demo</title>
     <link rel="stylesheet" href="./../lib/pico.css">
-
-    <?php include_once './../lib/highlight-script.html';?>
-
+    <?php include_once './../lib/highlight-script.html'; ?>
     <script src="./html2pdf.bundle.min.js"></script>
     <script>
         function printbyID(id, name) {
@@ -45,11 +43,12 @@
         main {
             overflow: visible;
         }
+
         code {
             width: auto;
         }
     </style>
-    
+
 </head>
 
 <body>
@@ -83,8 +82,7 @@
                 <h2>Setup</h2>
                 <p>I used raw javascript file,
                     <mark>html2pdf.bundle.min.js</mark>. Download it here:
-                    <a href="https://github.com/eKoopmans/html2pdf.js/blob/master/dist/html2pdf.bundle.min.js"
-                        target='_blank'>https://github.com/eKoopmans/html2pdf.js/blob/master/dist/html2pdf.bundle.min.js</a>.
+                    <a href="https://github.com/eKoopmans/html2pdf.js/blob/master/dist/html2pdf.bundle.min.js" target='_blank'>https://github.com/eKoopmans/html2pdf.js/blob/master/dist/html2pdf.bundle.min.js</a>.
                 </p>
             </hgroup>
             <p>
@@ -124,10 +122,10 @@
 
         display: flex;
         flex-direction: column;
-        align-items:center;
+        align-items: center;
     }
 
-    #article1 > figure > img{
+    #article1>figure>img {
         object-fit: cover;
         width: 35mm;
         height: 50mm;

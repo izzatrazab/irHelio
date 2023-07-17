@@ -8,9 +8,7 @@
     <title>Fetch Json from PHP file</title>
     <link rel="stylesheet" href="./../lib/pico.css">
     <link rel="stylesheet" href="./fetchJsonfomPhp.css">
-
     <?php include_once './../lib/highlight-script.html'; ?>
-    
     <script src="./fetchJsonfromPhp.js"></script>
 
 </head>
