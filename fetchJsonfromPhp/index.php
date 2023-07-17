@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="./../lib/pico.css">
     <link rel="stylesheet" href="./fetchJsonfomPhp.css">
 
-    <!-- highlight.js implementation -->
-    <link rel="stylesheet" href="./../lib/highlight/styles/ir-black.min.css">
-    <script src="./../lib/highlight/highlight.min.js"></script>
+    <?php include_once './../lib/highlight-script.html'; ?>
+    
     <script src="./fetchJsonfromPhp.js"></script>
 
 </head>

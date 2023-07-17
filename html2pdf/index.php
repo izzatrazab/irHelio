@@ -7,15 +7,10 @@
     <title>html2pdf demo</title>
     <link rel="stylesheet" href="./../lib/pico.css">
 
-    <!-- highlight.js implementation -->
-    <link rel="stylesheet" href="./../lib/highlight/styles/vs2015.min.css">
-    <script src="./../lib/highlight/highlight.min.js"></script>
+    <?php include_once './../lib/highlight-script.html';?>
+
     <script src="./html2pdf.bundle.min.js"></script>
     <script>
-        window.onload = () => {
-            hljs.highlightAll()
-        }
-
         function printbyID(id, name) {
             var element = document.getElementById(id);
             var opt = {

@@ -11,14 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-    <!-- highlight js -->
-    <link rel="stylesheet" href="./../lib/highlight/styles/stackoverflow-dark.min.css">
-    <script src="./../lib/highlight/highlight.min.js"></script>
-    <script>
-        window.onload = () => {
-            hljs.highlightAll()
-        }
-    </script>
+    <?php include_once './../lib/highlight-script.html';?>
 
     <title>Create table using javascript</title>
     <script>

@@ -1,8 +1,4 @@
 let clicked = false
-window.onload = () => {
-    hljs.highlightAll()
-}
-
 async function fetchJsonData(number) {
     console.log(number);
 
