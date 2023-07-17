@@ -59,29 +59,30 @@
             Click the button to add rows to the table:
             <button class='btn btn-primary' onclick='fetchList()'>Click me</button>
         </p>
-        <br>
-        <table id='table' class='table table-primary table-striped'>
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">ID refer</th>
-                    <th scope="col">nama</th>
-                    <th scope="col">Doctor</th>
-                    <th scope="col">title</th>
-                    <th scope="col">start</th>
-                    <th scope="col">end</th>
-                    <th scope="col">status</th>
-                    <th scope="col">slot owner</th>
-                </tr>
-            </thead>
-            <tbody id='tbody'>
+        <div class="overflow-scroll">
+            <table id='table' class='table table-primary table-striped'>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">ID refer</th>
+                        <th scope="col">nama</th>
+                        <th scope="col">Doctor</th>
+                        <th scope="col">title</th>
+                        <th scope="col">start</th>
+                        <th scope="col">end</th>
+                        <th scope="col">status</th>
+                        <th scope="col">slot owner</th>
+                    </tr>
+                </thead>
+                <tbody id='tbody'>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <section>
-        <h2>The way</h2>
+        <h2>How</h2>
         <p>
             create the table element that you want including the thead element. Use <strong>id attribute</strong> to
             specify a unique id for the tbody element. This is because we will need to access that element later on.
@@ -113,15 +114,22 @@
         <ul>
             <li>
                 <p>
-                    <mark>fetchList function</mark> below is simply fetching some data from another file. You can get the data anywhere you want as long its' format is an array of object that has all the element needed for each column of the table.
+                    <mark>fetchList function</mark> below is simply fetching some data from another file. You can get
+                    the data anywhere you want as long its' format is an array of object that has all the element needed
+                    for each column of the table.
                 </p>
             </li>
             <li>
                 <p>
-                    <mark>createTable function</mark> is where the table is created. Simply call the function and pass an array of object as mention before as well as the id of tbody element that you use. In this case, this function is called in fetchList function at the end.
+                    <mark>createTable function</mark> is where the table is created. Simply call the function and pass
+                    an array of object as mention before as well as the id of tbody element that you use. In this case,
+                    this function is called in fetchList function at the end.
                 </p>
                 <p>
-                    Use the id that specified the tbody element that you use. If you use bootstrap/ tailwind or any other css framework that use class, you can add the class here. Notice the code line <mark>row.className = 'table-primary'</mark>. Class <mark>`table-primary`</mark> is added to the row element.
+                    Use the id that specified the tbody element that you use. If you use bootstrap/ tailwind or any
+                    other css framework that use class, you can add the class here. Notice the code line
+                    <mark>row.className = 'table-primary'</mark>. Class <mark>`table-primary`</mark> is added to the row
+                    element.
                 </p>
             </li>
         </ul>
