@@ -87,10 +87,9 @@
     </section>
 
     <section>
-        <h2>How</h2>
+        <h2>How ?</h2>
         <p>
-            create the table element that you want including the thead element. Use <strong>id attribute</strong> to
-            specify a unique id for the tbody element. This is because we will need to access that element later on.
+            Create the table element including the column header. Specify a unique id for the tbody element. We need to access that element to append elements inside it. In this case I use `tbody` as the id.
         </p>
         <pre>
             <code>
@@ -119,21 +118,16 @@
         <ul>
             <li>
                 <p>
-                    <mark>fetchList() function</mark> below is simply fetching some data from another file. You can get
-                    the data anywhere you want as long its' format is an <strong>array of object</strong> that has all the element needed
-                    for each column of the table.
+                    <mark>fetchList()</mark>: fetching some data from another file (this is not necessary). You can get the data anywhere you want as long as the format is an <strong>array of object</strong> that has all the element needed for each column of the table.
                 </p>
             </li>
             <li>
                 <p>
-                    <mark>createTable() function</mark> is where the table is created. Simply call the function and pass
-                    an array of object as mention before as well as the id of tbody element that you use. In this case,
-                    this function is called in fetchList function at last line, the array is fetched from another file and the id is `tbody`.
+                    <mark>createTable()</mark>: where the table is created. Use the id that specified the tbody element that you use. Pass an array and the id of tbody element. Based on snippet below this function is called in fetchList function at last line.
                 </p>
                 <p>
-                    Use the id that specified the tbody element that you use. If you use bootstrap/ tailwind or any
-                    other css framework that use class, you can add the class here. Notice the code line
-                    <mark>row.className = 'table-primary'</mark>. Class <mark>`table-primary`</mark> is added to the row
+                    If you use bootstrap/tailwind or any other css framework that use classes, you can add the class here. Notice the code line
+                    <mark>row.className = 'table-primary'</mark>. Class <mark>`table-primary`</mark> (bootstrap) is added to the row
                     element.
                 </p>
             </li>
