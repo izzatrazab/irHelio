@@ -91,17 +91,28 @@
             <pre><code class='language-html'>&lt;script src="html2pdf.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
 
         </section>
-        <section>
+        <section style="overflow-x: scroll;">
             <hgroup>
                 <h2>Demo</h2>
                 <p>We will try to change the article element below to pdf.</p>
             </hgroup>
             <hr>
             <article id="article1">
-                <figure>
-                    <img src="./eka-p-amdela-55JuNAPgYfo-unsplash.jpg" alt="">
-                    <figcaption>A grasshopper</figcaption>
-                </figure>
+                <section>
+                    <img class="passport" src="./eka-p-amdela-55JuNAPgYfo-unsplash.jpg" alt="">
+                    <ul>
+                        <li>Name: Popper</li>
+                        <li>Age: 7 months</li>
+                        <li>Education: Backyard Science School</li>
+                        <li>Favourite: Lettuce</li>
+                    </ul>
+                </section>
+                <h5>Lorem</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae velit reiciendis reprehenderit, autem sit illo doloribus delectus officia obcaecati cupiditate quidem tempore impedit itaque ratione rerum aut! Numquam, non.</p>
+                <h5>Lorem</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae velit reiciendis reprehenderit, autem sit illo doloribus delectus officia obcaecati cupiditate quidem tempore impedit itaque ratione rerum aut! Numquam, non.</p>
+                <h5>Lorem</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae velit reiciendis reprehenderit, autem sit illo doloribus delectus officia obcaecati cupiditate quidem tempore impedit itaque ratione rerum aut! Numquam, non.</p>
             </article>
             <hr>
             <button onclick='printbyID("article1", "a picture of green grasshopper")'>print</button>
@@ -111,23 +122,23 @@
 
 </html>
 <style>
-    figcaption {
-        text-align: center;
-    }
 
     #article1 {
         margin: 0;
-        width: 100%;
+        width: 190mm;
         aspect-ratio: 210/297;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        /* overflow: hidden; */
     }
 
-    #article1>figure>img {
+    #article1>section {
+        display: flex;
+        gap: 20px;
+    }
+
+
+    .passport {
         object-fit: cover;
         width: 35mm;
-        height: 50mm;
+        aspect-ratio: 35/50;
     }
 </style>

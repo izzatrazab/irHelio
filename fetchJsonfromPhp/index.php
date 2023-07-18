@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch Json from PHP file</title>
-    <link rel="stylesheet" href="./../lib/pico.css">
+    <!-- <link rel="stylesheet" href="./../lib/pico.css"> -->
+    <link rel="stylesheet" href="./../lib/de.css">
     <link rel="stylesheet" href="./fetchJsonfomPhp.css">
     <?php include_once './../lib/highlight-script.html'; ?>
     <script src="./fetchJsonfromPhp.js"></script>
