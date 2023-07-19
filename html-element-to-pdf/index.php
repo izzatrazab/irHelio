@@ -60,10 +60,8 @@
             <pre><code></code></pre>
         </section>
         <section style="overflow-x: scroll;">
-            <hgroup>
-                <h2>Demo</h2>
-                <p>We will try to change the article element below to pdf.</p>
-            </hgroup>
+            <h2>Demo</h2>
+            <button onclick='printElementbyID("article1", "a picture of green grasshopper")'>print the element below</button>
             <div id="article1">
                 <section>
                     <img class="passport" src="./eka-p-amdela-55JuNAPgYfo-unsplash.jpg" alt="">
@@ -74,15 +72,30 @@
                         <li>Favourite: Lettuce</li>
                     </ul>
                 </section>
+
                 <h5>Lorem</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae velit reiciendis reprehenderit, autem sit illo doloribus delectus officia obcaecati cupiditate quidem tempore impedit itaque ratione rerum aut! Numquam, non.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Jumping Distance</th>
+                            <th scope="col">Flying Speed</th>
+                            <th scope="col">Camouflage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 meter</td>
+                            <td>5km/h</td>
+                            <td>Expert</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <h5>Lorem</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae velit reiciendis reprehenderit, autem sit illo doloribus delectus officia obcaecati cupiditate quidem tempore impedit itaque ratione rerum aut! Numquam, non.</p>
                 <h5>Lorem</h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae velit reiciendis reprehenderit, autem sit illo doloribus delectus officia obcaecati cupiditate quidem tempore impedit itaque ratione rerum aut! Numquam, non.</p>
             </div>
-            <hr>
-            <button onclick='printElementbyID("article1", "a picture of green grasshopper")'>print</button>
         </section>
     </article>
 </body>

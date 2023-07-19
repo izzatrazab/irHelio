@@ -1,14 +1,29 @@
 #article1 {
     margin: 0;
     aspect-ratio: 210/297;
+    background-color: white !important;
+    padding: 1cm;
 }
 
 #article1>section {
+    color: inherit;
     display: flex;
-    gap: 20px;
+}
+
+#article1>* {
+    color: black;
+}
+
+ul>li {
+    list-style: none !important;
+    color: black;
 }
 
 .passport {
     object-fit: cover;
     width: 35mm;
+}
+
+th,td{
+    color: black;
 }
