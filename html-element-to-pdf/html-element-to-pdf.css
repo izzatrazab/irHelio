@@ -1,0 +1,14 @@
+#article1 {
+    margin: 0;
+    aspect-ratio: 210/297;
+}
+
+#article1>section {
+    display: flex;
+    gap: 20px;
+}
+
+.passport {
+    object-fit: cover;
+    width: 35mm;
+}
