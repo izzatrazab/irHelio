@@ -1,16 +1,16 @@
-#article1 {
+#topdf {
     margin: 0;
     aspect-ratio: 210/297;
     background-color: white !important;
     padding: 1cm;
 }
 
-#article1>section {
+#topdf>section {
     color: inherit;
     display: flex;
 }
 
-#article1>* {
+#topdf>* {
     color: black;
 }
 
@@ -24,6 +24,18 @@ ul>li {
     width: 35mm;
 }
 
-th,td{
+th,
+td {
     color: black;
+}
+figure{
+    text-align: center;
+}
+figure > img{
+    padding: 10px;
+    text-align: center;
+    border-style: solid;
+    border-color: var(--form-element-border-color);
+    object-fit: cover;
+    max-height: 600px;
 }
