@@ -9,14 +9,14 @@
     <!-- <link rel="stylesheet" href="./../lib/pico.css"> -->
     <link rel="stylesheet" href="./../lib/de.css">
     <link rel="stylesheet" href="./fetchJsonfomPhp.css">
+    <link rel="stylesheet" href="./../lib/component/navbar.css">
     <?php include_once './../lib/highlight-script.html'; ?>
     <script src="./fetchJsonfromPhp.js"></script>
-
 </head>
 
-<body class="container">
-    <main>
-        <a href="./..">HOME</a>
+<body>
+    <?php include_once '../lib/component/navbar.php' ?>
+    <main class="container">
         <hgroup>
             <h1>Fetch Json data from php</h1>
             <p>

@@ -33,6 +33,7 @@ $results = [
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap table (directly in php file)</title>
+    <link rel="stylesheet" href="./../lib/component/navbar.css">
     <!-- bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -48,9 +49,9 @@ $results = [
     </style>
 </head>
 
-<body class="container">
-    <main class="d-flex flex-column">
-        <a href="./..">HOME</a>
+<body>
+    <?php include_once './../lib/component/navbar.php' ?>
+    <main class="d-flex flex-column container">
         <section>
             <h1>Below is the raw data used </h1>
             <pre class="p-3">

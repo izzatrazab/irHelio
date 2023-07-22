@@ -7,6 +7,7 @@
 
     <!-- bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../lib/component/navbar.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <?php include_once './../lib/highlight-script.html'; ?>
 
@@ -55,8 +56,11 @@
     </script>
 </head>
 
-<body class='container'>
-    <a href="./..">HOME</a>
+<body>
+
+<?php include_once './../lib/component/navbar.php' ?>    
+<main class="container">
+
     <h1>Create Table Using Javascript</h1>
     <hr>
     <section>
@@ -178,6 +182,7 @@ function createTable(list, tbodyID) {
             And that is all.
         </p>
     </section>
+    </main>
 </body>
 
 </html>

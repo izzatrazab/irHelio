@@ -1,0 +1,13 @@
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-block: 10px;
+    background-color: rgba(238, 130, 238, 0.071);
+}
+
+nav > a {
+    color: violet;
+    font-size: x-large;
+    font-weight: bold;
+}

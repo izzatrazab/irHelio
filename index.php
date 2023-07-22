@@ -3,19 +3,23 @@
 $posts = [
     [
         'href' => 'html-element-to-pdf',
-        'title' => 'Convert HTML element to pdf using html2pdf.js'
+        'title' => 'Convert HTML element to pdf using html2pdf.js',
+        'last-update' => '2023-07.22'
     ],
     [
         'href' => 'fetchJsonfromPhp',
-        'title' => 'Fetch Json formatted data from PHP file'
+        'title' => 'Fetch Json formatted data from PHP file',
+        'last-update' => '2023-07.22'
     ],
     [
         'href' => 'bootstraptable',
-        'title' => 'Bootstrap table (directly in php file)'
+        'title' => 'Bootstrap table (directly in php file)',
+        'last-update' => '2023-07.22'
     ],
     [
         'href' => 'create-table-using-javascript',
-        'title' => 'Create table using javascript'
+        'title' => 'Create table using javascript',
+        'last-update' => '2023-07.22'
     ],
 ];
 ?>
@@ -40,6 +44,7 @@ $posts = [
 
         a {
             display: contents;
+            color: var(--muted-color);
         }
 
         .card {
@@ -51,17 +56,18 @@ $posts = [
 
         .card:hover{
             transform: scale(1.1);
+            border-color:violet;
         }
     </style>
 </head>
 
 <body>
-    <main class="container">
+    <main class="container" >
         <hgroup>
             <h1>irHelio</h1>
             <p>irHelio is a website that is dedicated as a collection of my solutions of the problems that I have encountered. All of the problems are focusing on HTML, Vanilla JS, and PHP</p>
         </hgroup>
-        <p>Here are some problems that I already solved (at least it solves my problem). There will be a lot more in the future.</p>
+        <p>Here are some problems that I already solved (at least it solves mine). There will be a lot more in the future.</p>
         <section>
 
             <?php
@@ -71,6 +77,7 @@ $posts = [
                 echo '<h2>';
                 echo $value['title'];
                 echo '</h2>';
+                echo '<span>' . $value['last-update'] . '</span>';
                 echo '</div>';
                 echo '</a>';
             }
