@@ -2011,7 +2011,6 @@ article>footer {
  * Card (<div>)
  */
 :is(div).card {
-  margin: var(--block-spacing-vertical) 0;
   padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
   border-radius: var(--border-radius);
   border-width: 1px;
