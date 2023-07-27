@@ -5,11 +5,11 @@ header('Cache-Control: no-cache');
 date_default_timezone_set('Asia/Kuala_Lumpur');
 
 while (true) {
-    echo "data: {\n";
-    echo "data: 'Asia/Kuala_Lumpur':'" . date('Y/m/d h:i:s A') . "',\n";
-    echo "data: }\n\n";
+    echo 'data: {"timezone":"Asia/Kuala_Lumpur",' . "\n";
+    echo 'data: "time": "' . date('Y/m/d h:i:s A') . '"}'."\n\n";
+
     ob_flush();
     flush();
 
-    sleep(5);
+    sleep(2);
 }

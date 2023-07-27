@@ -2,6 +2,11 @@
 //to add new post page, add new item in the $posts array on index 1.
 $posts = [
     [
+        'href' => 'simple-server-sent-event',
+        'title' => 'Simple Server Sent Event(SSE) using PHP & Js ',
+        'last-update' => '2023-07.28'
+    ],
+    [
         'href' => 'html-element-to-pdf',
         'title' => 'Convert HTML element to pdf using html2pdf.js',
         'last-update' => '2023-07.22'
