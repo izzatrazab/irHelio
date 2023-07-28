@@ -16,19 +16,18 @@
     <main class='container'>
         <article>
             <header>
-
                 <hgroup>
-
                     <h1>
                         Simple Server Sent Event(SSE) using PHP & Js
                     </h1>
                     <p>2023-07-27</p>
                 </hgroup>
             </header>
+
             <section>
                 <h2>Demo</h2>
                 <p>
-                    In this demo, we will receive timestemp every 2 seconds. It will be displayed below the buttons
+                    In this demo, we will receive timestemp every 2 seconds. It will be displayed below the buttons. <strong>NOTE: This demo does not work at the moment due to hosting service. You can try this demo in your local machine. Download this repo <a href="https://github.com/izzatrazab/irHelio" target="_blank">here</a></strong>
                 </p>
                 <div style="display:flex; gap:10px;">
                     <button class="contrast" onclick="startEventSource()">Start SSE</button>
@@ -37,6 +36,7 @@
                 <ol id="list">
                 </ol>
             </section>
+            
             <section>
                 <h2>Scenario</h2>
                 <p>This tutorial is based on my use case. The following is my scenario:</p>

@@ -13,9 +13,11 @@ function startEventSource() {
             console.log("SSE connection has been established.");
         }
         source.onmessage = (event) => {
-            addtolist(JSON.parse(event.data))
+            let message = JSON.parse(event.data)
+            addtolist(message.timezone + ' : ' + message.time)
         }
         source.onerror = () => {
+            addtolist("Error occured, please try again later.")
             console.log("Error occured, please try again later.");
         }
         return
@@ -33,9 +35,8 @@ function stopEventSource() {
     console.log('SSE conection has been closed');
 }
 
-function addtolist(str) {
+function addtolist(message) {
     let list = document.createElement('li')
-    console.log(str);
-    list.textContent = str.timezone + ' : ' + str.time
+    list.textContent = message
     ol.append(list)
 }
