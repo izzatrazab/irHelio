@@ -4,27 +4,27 @@ $posts = [
     [
         'href' => 'simple-server-sent-event',
         'title' => 'Simple Server Sent Event(SSE) using PHP & Js ',
-        'last-update' => '2023-07.28'
+        'last-update' => '2023-07-28'
     ],
     [
         'href' => 'html-element-to-pdf',
         'title' => 'Convert HTML element to pdf using html2pdf.js',
-        'last-update' => '2023-07.22'
+        'last-update' => '2023-07-22'
     ],
     [
         'href' => 'fetchJsonfromPhp',
         'title' => 'Fetch Json formatted data from PHP file',
-        'last-update' => '2023-07.22'
+        'last-update' => '2023-07-22'
     ],
     [
         'href' => 'bootstraptable',
         'title' => 'Bootstrap table (directly in php file)',
-        'last-update' => '2023-07.22'
+        'last-update' => '2023-07-22'
     ],
     [
         'href' => 'create-table-using-javascript',
         'title' => 'Create table using javascript',
-        'last-update' => '2023-07.22'
+        'last-update' => '2023-07-22'
     ],
 ];
 ?>
